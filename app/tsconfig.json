@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "jsx": "react",
+        "strict": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "noEmit": false,
+        "target": "ES5",
+        "typeRoots" : [
+            "./ts/types"
+        ],
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "baseUrl": "./",
+        "paths": {
+            "~/*": ["ts/*"]
+        }
+    },
+    "compileOnSave": false,
+    "formatCodeOptions": {
+        "indentSize": 4,
+        "tabSize": 4,
+        "newLineCharacter": "\r\n",
+        "convertTabsToSpaces": true,
+        "insertSpaceAfterCommaDelimiter": true,
+        "insertSpaceAfterSemicolonInForStatements": true,
+        "insertSpaceBeforeAndAfterBinaryOperators": true,
+        "insertSpaceAfterKeywordsInControlFlowStatements": true,
+        "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
+        "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+        "placeOpenBraceOnNewLineForFunctions": false,
+        "placeOpenBraceOnNewLineForControlBlocks": false
+    },
+    "include": [
+        "./ts/**/*"
+    ],
+    "exclude": [
+        "./ts/**/*.test.ts",
+        "./ts/**/*.test.tsx",
+        "public",
+        "vendor"
+    ]
+}
