@@ -6,11 +6,12 @@ import { Mesh } from './mesh';
 
 export function App() {
     const rotation = new THREE.Euler();
+    console.log('App render');
     return (
         <Layout
             onUpdate={() => {
-                rotation.x += 0.1;
-                rotation.y += 0.1;
+                rotation.z += 0.1;
+                console.log(rotation.z);
             }}
         >
             <Mesh rotation={rotation} />
