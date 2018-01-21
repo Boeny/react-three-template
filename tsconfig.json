@@ -37,7 +37,6 @@
     "exclude": [
         "./app/ts/**/*.test.ts",
         "./app/ts/**/*.test.tsx",
-        "./app/ts/engine/**/*",
         "docs",
         "vendor"
     ]
