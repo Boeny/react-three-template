@@ -15,17 +15,22 @@ module.exports = {
     resolve: {
         extensions: ['*', '.tsx', '.ts', '.js', '.styl', '.css'],
         alias: {
-            '~': path.resolve(__dirname, './app/ts'),
-            'react': path.resolve(__dirname, './node_modules/react/index.js'),
-            'react-dom': path.resolve(__dirname, './node_modules/react-dom/index.js'),
-            'lodash': path.resolve(__dirname, './node_modules/lodash'),
-            'es6-promise': path.resolve(__dirname, './node_modules/es6-promise')
+            '~': path.resolve(__dirname, './app/ts')
         }
     },
     module: {
         rules: [
-            { enforce: 'pre', test: /\.tsx?$/, use: 'tslint-loader', exclude: /(node_modules)/ },
-            { test: /\.ts(x?)$/, use: 'ts-loader?configFileName=./app/tsconfig.json', exclude: /(node_modules)/ },
+            {
+                enforce: 'pre',
+                test: /\.tsx?$/,
+                use: 'tslint-loader',
+                exclude: /(node_modules)/
+            },
+            {
+                test: /\.ts(x?)$/,
+                use: 'ts-loader',
+                exclude: /(node_modules)/
+            },
             {
                 test: /\.styl$/,
                 use: ExtractTextPlugin.extract({
@@ -34,7 +39,10 @@ module.exports = {
                 }),
                 exclude: /(node_modules)/
             },
-            { test: /\.css/, use: ['style-loader', 'css-loader'] },
+            {
+                test: /\.css/,
+                use: ['style-loader', 'css-loader']
+            },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -47,8 +55,8 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin("main.css"),
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/) ,
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
         //new BundleAnalyzerPlugin()
     ],
-    //watch: true
+    watch: true
 };
