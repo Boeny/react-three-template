@@ -44,7 +44,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-three-renderer": "^3.2.3",
-    "react-three-renderer-fiber": "0.0.1-0",
     "three": "^0.89.0"
   }
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as React3 from 'react-three-renderer';
+import * as React3 from 'react3';
 import * as THREE from 'three';
 
 

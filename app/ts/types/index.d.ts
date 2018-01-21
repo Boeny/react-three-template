@@ -13,3 +13,5 @@ declare namespace JSX {
         meshBasicMaterial: any;
     }
 }
+
+declare module 'react3';
