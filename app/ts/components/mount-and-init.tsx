@@ -3,7 +3,8 @@ import * as React from 'react';
 
 interface Props {
     component: JSX.Element;
-    onMount: () => void;
+    onMount?: () => void;
+    defaultComponent?: JSX.Element;
 }
 
 interface State {
@@ -18,11 +19,12 @@ export class MountAndInit extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        this.props.onMount();
-        this.setState(() => ({ ready: true }));
+        this.props.onMount && this.props.onMount();
+        this.setState({ ready: true });
     }
 
     render() {
-        return this.state.ready ? this.props.component : <noscript />;
+        const { component, defaultComponent } = this.props;
+        return this.state.ready ? component : (defaultComponent || <noscript />);
     }
 }

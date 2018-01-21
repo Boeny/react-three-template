@@ -9,14 +9,14 @@ module.exports = {
         'app': './app/ts/main.tsx'
     },
     output: {
-        path: path.join(__dirname, "public"),
+        path: path.join(__dirname, "docs"),
         filename: '[name].js'
     },
     resolve: {
         extensions: ['*', '.tsx', '.ts', '.js', '.styl', '.css'],
         alias: {
             '~': path.resolve(__dirname, './app/ts'),
-            'react3': path.resolve(__dirname, './node_modules/react-three-renderer')
+            'react3': path.resolve(__dirname, './app/node_modules/react-three-renderer')
         }
     },
     module: {
@@ -59,5 +59,5 @@ module.exports = {
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
         //new BundleAnalyzerPlugin()
     ],
-    watch: true
+    // watch: true
 };
