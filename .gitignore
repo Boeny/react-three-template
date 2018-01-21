@@ -28,6 +28,7 @@ Thumbs.db
 
 # NPM packages folder.
 /node_modules/
+/extra_modules/
 
 # Brunch folder for temporary files.
 tmp/
