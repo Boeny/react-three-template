@@ -5,12 +5,23 @@ declare namespace JSX {
         scene: any;
         perspectiveCamera: any;
         ambientLight: any;
+        pointLight: any;
+        directionalLight: any;
+        hemisphereLight: any;
         axisHelper: any;
         mainCamera: any;
         color: any;
         mesh: any;
         boxGeometry: any;
+        sphereGeometry: any;
         meshBasicMaterial: any;
+        meshPhongMaterial: any;
+	    onUpdate?: () => void;
+        onKeyDown?: () => void;
+        onKeyUp?: () => void;
+        onMouseDown?: () => void;
+        onMouseUp?: () => void;
+        onClick?: () => void;
     }
 }
 

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as THREE from 'three';
+import { getColor } from './test/actions';
 
 
 interface Props {
@@ -9,12 +10,19 @@ interface Props {
 export function Mesh(props: Props) {
     return (
         <mesh rotation={props.rotation}>
-            <boxGeometry
-                width={1}
-                height={1}
-                depth={1}
+            <sphereGeometry
+                radius={1}
+                widthSegments={32}
+                heightSegments={32}
             />
-            <meshBasicMaterial color={0x00ff00} />
+            <meshPhongMaterial
+                color={getColor()}
+                specular={0x999999}
+                shading={THREE.FlatShading}
+                vertexColors={THREE.VertexColors}
+                castShadow={true}
+                receiveShadow={true}
+            />
         </mesh>
     );
 }

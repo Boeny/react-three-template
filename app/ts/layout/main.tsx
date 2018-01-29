@@ -7,11 +7,11 @@ const cameraPosition = new THREE.Vector3(0, 0, 5);
 
 interface Props {
     onUpdate?: () => void;
-    onKeyDown?: () => void;
-    onKeyUp?: () => void;
-    onMouseDown?: () => void;
-    onMouseUp?: () => void;
-    onClick?: () => void;
+    onKeyDown?: (e: any) => void;
+    onKeyUp?: (e: any) => void;
+    onMouseDown?: (e: any) => void;
+    onMouseUp?: (e: any) => void;
+    onClick?: (e: any) => void;
     children?: any;
 }
 
