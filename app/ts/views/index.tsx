@@ -12,8 +12,12 @@ export function App() {
             defaultComponent={<Loading />}
             component={(
                 <div>
-                    <Test onMount={check => checkBkColor = check}/>
-                    <Scene onUpdate={checkBkColor}/>
+                    <Test onMount={check => {
+                        checkBkColor = check;
+                    }} />
+                    <Scene onUpdate={() => {
+                        checkBkColor();
+                    }}/>
                 </div>
             )}
         />

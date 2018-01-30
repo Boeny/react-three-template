@@ -1,28 +1,30 @@
 import * as React from 'react';
-import * as THREE from 'three';
+import { observer } from 'mobx-react';
+import { Euler, FlatShading, VertexColors } from 'three';
 import { getColor } from './test/actions';
 
 
 interface Props {
-    rotation: THREE.Euler;
+    rotation: Euler;
 }
 
-export function Mesh(props: Props) {
+export const Mesh = observer((props: Props) => {
+    console.log('render');
     return (
         <mesh rotation={props.rotation}>
-            <sphereGeometry
-                radius={1}
-                widthSegments={32}
-                heightSegments={32}
+            <boxGeometry
+                width={1}
+                height={1}
+                depth={1}
             />
             <meshPhongMaterial
                 color={getColor()}
                 specular={0x999999}
-                shading={THREE.FlatShading}
-                vertexColors={THREE.VertexColors}
+                shading={FlatShading}
+                vertexColors={VertexColors}
                 castShadow={true}
                 receiveShadow={true}
             />
         </mesh>
     );
-}
+});

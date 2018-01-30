@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as THREE from 'three';
+import { Euler } from 'three';
 import { Mesh } from './mesh';
 
 
@@ -8,14 +8,14 @@ interface Props {
 }
 
 interface State {
-    rotation: THREE.Euler;
+    rotation: Euler;
 }
 
 export class Ship extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
-        this.state = { rotation: new THREE.Euler() };
+        this.state = { rotation: new Euler() };
     }
 
     componentDidMount() {
@@ -23,7 +23,7 @@ export class Ship extends React.Component<Props, State> {
     }
 
     update(x: number, y: number, z: number) {
-        this.setState({ rotation: new THREE.Euler(x, y, z) });
+        this.setState({ rotation: new Euler(x, y, z) });
     }
 
     left() {

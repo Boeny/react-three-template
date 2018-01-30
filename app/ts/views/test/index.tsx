@@ -1,12 +1,8 @@
 import * as React from 'react';
-import { Color } from './types';
 import { Store } from './store';
 import { setColor } from './actions';
-import { convertToColor } from './utils';
 import { MountAndInit } from '~/components/mount-and-init';
 
-
-type CheckColorAction = (color: Color) => void;
 
 interface Props {
     onMount: (check: () => void) => void;
@@ -16,13 +12,8 @@ export class Test extends React.Component<Props> {
 
     element: HTMLDivElement | null = null;
 
-    getBkColor = () => {
-        console.log(this.element && this.element.style.backgroundColor);
-        return convertToColor(this.element && this.element.style.backgroundColor || '');
-    }
-
-    getAction = (action: CheckColorAction) => {
-        return () => action(this.getBkColor());
+    getBkColor = (): string => {
+        return this.element && this.element.style.backgroundColor || 'white';
     }
 
     render() {
@@ -35,7 +26,9 @@ export class Test extends React.Component<Props> {
                         style={Store.state.mesh}
                     >mesh</div>
                 )}
-                onMount={() => onMount(this.getAction(setColor))}
+                onMount={() => onMount(
+                    () => setColor(this.getBkColor())
+                )}
             />
         );
     }
